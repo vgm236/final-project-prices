@@ -4,7 +4,6 @@
 import requests
 import json
 import csv
-import prettytable
 import datetime
 
 # FOR API
@@ -17,14 +16,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
+import itertools
 
 
 
-########## ---> TODO: select beginning and end dates
-########## ---> TODO: return error if series do not exist
 ########## ---> TODO: transform series (original, mom or yoy)
 ########## ---> TODO: return error if series do not exist
-########## ---> TODO: Name axis of charts
 ########## ---> TODO: Compare series
 
 
@@ -51,6 +48,10 @@ with open(list_path,'wb') as f:
 
 data_list = pd.read_csv(list_path, delimiter="\t")
 
+
+
+
+
 data_list.values.tolist()
 
 #List filtering
@@ -75,29 +76,48 @@ print("Example: SSHJ031 (for Infants' furniture) ")
 
 print("---------------------------------------------------------")
 
-#Selecting the group
+##Selecting the group
+
+# codes
+data_dict = data_list.set_index('item_code').T.to_dict('item_name')
 
 input_code = input("Please input code: ")
 
 download_list = [f"CUUR0000{input_code}"] #TODO:
 
+name_series = data_dict["item_name"][f"{input_code}"]
+
 series_dict = {
-    'CUUR0000SS68021': 'Inflation'}  #TODO:
-
-init_date = input("Please input initial year (Example: 2000): ")
-end_date = input("Please input final year (Example: 2019): ")
-
-dates = (init_date, end_date)  
+    f"CUUR0000{input_code}": name_series}  #TODO:
 
 #if input_code not in code:
 #    print()
 
-########## ---> TODO: selection of the series (more than one as optional)
 ########## ---> TODO: return error if series do not exist
 
+########## ---> TODO: selection of the series (more than one as optional)
+
+
+# dates
+init_date = input("Please input initial year (Example: 2000): ")
+end_date = input("Please input final year (Example: 2019): ")
+
+dates_list = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]
+
+#if init_date not in dates_list:
+#    print("-------------------------------------")
+#    print("\n")
+#    print("Non-existent dates. Please try again.")
+#    print("\n")
+#    print("-------------------------------------")
+#    exit()
+#else:
+#    pass
+#
+
+dates = (init_date, end_date)  
 
 ### DATA DOWNLOAD
-
 
 headers = {'Content-type': 'application/json'}
 data = json.dumps({"seriesid": download_list,"startyear":dates[0], "endyear":dates[1],"catalog":False, "calculations":False, "annualaverage":False, "registrationkey":api_key})
@@ -138,10 +158,10 @@ ax.xaxis.set_major_locator(plt.MaxNLocator(4)) #editing number of ticks in the a
    
 #plt.tight_layout() # ensures all areas of the chart are visible by default (fixes labels getting cut off)
 
-ax.set_xlabel("x label") #TODO:
+ax.set_xlabel("Dates")
 ax.set_ylabel("y label") #TODO:
 
-df.plot(title='Inflation data', ax=ax) #TODO:
+df.plot(title=name_series, ax=ax)
 
 plt.show()
 
