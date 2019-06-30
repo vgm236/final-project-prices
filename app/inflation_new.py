@@ -48,10 +48,6 @@ with open(list_path,'wb') as f:
 
 data_list = pd.read_csv(list_path, delimiter="\t")
 
-
-
-
-
 data_list.values.tolist()
 
 #List filtering
@@ -83,17 +79,33 @@ data_dict = data_list.set_index('item_code').T.to_dict('item_name')
 
 input_code = input("Please input code: ")
 
-download_list = [f"CUUR0000{input_code}"] #TODO:
+
+try:
+    name_series = data_dict["item_name"][f"{input_code}"]
+except:
+    print("-------------------------------------")
+    print("\n")
+    print("Non-existent code. Please try again.")
+    print("\n")
+    print("-------------------------------------")
+    exit()
+
+#if str(input_code) not in code:
+#    print("-------------------------------------")
+#    print("\n")
+#    print("Non-existent code. Please try again.")
+#    print("\n")
+#    print("-------------------------------------")
+#    exit()
+#else:
+#    pass
+
+download_list = [f"CUUR0000{input_code}"] 
 
 name_series = data_dict["item_name"][f"{input_code}"]
 
 series_dict = {
-    f"CUUR0000{input_code}": name_series}  #TODO:
-
-#if input_code not in code:
-#    print()
-
-########## ---> TODO: return error if series do not exist
+    f"CUUR0000{input_code}": name_series} 
 
 ########## ---> TODO: selection of the series (more than one as optional)
 
@@ -102,18 +114,18 @@ series_dict = {
 init_date = input("Please input initial year (Example: 2000): ")
 end_date = input("Please input final year (Example: 2019): ")
 
-dates_list = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]
+dates_list = ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"]
 
-#if init_date not in dates_list:
-#    print("-------------------------------------")
-#    print("\n")
-#    print("Non-existent dates. Please try again.")
-#    print("\n")
-#    print("-------------------------------------")
-#    exit()
-#else:
-#    pass
-#
+if init_date not in dates_list:
+    print("-------------------------------------")
+    print("\n")
+    print("Non-existent dates. Please try again.")
+    print("\n")
+    print("-------------------------------------")
+    exit()
+else:
+    pass
+
 
 dates = (init_date, end_date)  
 
