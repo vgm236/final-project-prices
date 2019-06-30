@@ -141,6 +141,7 @@ The program should be able to process multiple shopping cart items of the same k
 
 ### Example Output
 
+``` sh
         Code                Name
 0       AA0                 All items - old base
 1       AA0R                Purchasing power of the consumer dollar - old base
@@ -551,6 +552,7 @@ Please input initial year (Example: 2000): 2000
 Please input final year (Example: 2019): 2019
 Please input transformation (Original, MoM, YoY): YoY
 
+```
 
 
 #################################
