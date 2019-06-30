@@ -158,8 +158,8 @@ The program should be able to process multiple shopping cart items of the same k
 12      SA0R                Purchasing power of the consumer dollar
 13      SA311               Apparel less footwear
 14      SAA                 Apparel
-15      SAA1                Men's and boys' apparel
-16      SAA2                Women's and girls' apparel
+15      SAA1                Mens and boys apparel
+16      SAA2                Womens and girls apparel
 17      SAC                 Commodities
 18      SACE                Energy commodities
 19      SACL1               Commodities less food
@@ -218,23 +218,23 @@ The program should be able to process multiple shopping cart items of the same k
 72      SAT                 Transportation
 73      SAT1                Private transportation
 74      SATCLTB             Transportation commodities less motor fuel
-75      SEAA                Men's apparel
-76      SEAA01              Men's suits, sport coats, and outerwear
-77      SEAA02              Men's underwear, nightwear, swimwear and accessories
-78      SEAA03              Men's shirts and sweaters
-79      SEAA04              Men's pants and shorts
-80      SEAB                Boys' apparel
-81      SEAC                Women's apparel
-82      SEAC01              Women's outerwear
-83      SEAC02              Women's dresses
-84      SEAC03              Women's suits and separates
-85      SEAC04              Women's underwear, nightwear, swimwear and accessories
-86      SEAD                Girls' apparel
+75      SEAA                Mens apparel
+76      SEAA01              Mens suits, sport coats, and outerwear
+77      SEAA02              Mens underwear, nightwear, swimwear and accessories
+78      SEAA03              Mens shirts and sweaters
+79      SEAA04              Mens pants and shorts
+80      SEAB                Boys apparel
+81      SEAC                Womens apparel
+82      SEAC01              Womens outerwear
+83      SEAC02              Womens dresses
+84      SEAC03              Womens suits and separates
+85      SEAC04              Womens underwear, nightwear, swimwear and accessories
+86      SEAD                Girls apparel
 87      SEAE                Footwear
-88      SEAE01              Men's footwear
-89      SEAE02              Boys' and girls' footwear
-90      SEAE03              Women's footwear
-91      SEAF                Infants' and toddlers' apparel
+88      SEAE01              Mens footwear
+89      SEAE02              Boys and girls footwear
+90      SEAE03              Womens footwear
+91      SEAF                Infants and toddlers apparel
 92      SEAG                Jewelry and watches
 93      SEAG01              Watches
 94      SEAG02              Jewelry
@@ -354,9 +354,9 @@ The program should be able to process multiple shopping cart items of the same k
 208     SEHB                Lodging away from home
 209     SEHB01              Housing at school, excluding board
 210     SEHB02              Other lodging away from home including hotels and motels
-211     SEHC                Owners' equivalent rent of residences
-212     SEHC01              Owners' equivalent rent of primary residence
-213     SEHD                Tenants' and household insurance
+211     SEHC                Owners equivalent rent of residences
+212     SEHC01              Owners equivalent rent of primary residence
+213     SEHD                Tenants and household insurance
 214     SEHE                Fuel oil and other fuels
 215     SEHE01              Fuel oil
 216     SEHE02              Propane, kerosene, and firewood
@@ -395,7 +395,7 @@ The program should be able to process multiple shopping cart items of the same k
 249     SEHP03              Moving, storage, freight expense
 250     SEHP04              Repair of household items
 251     SEMC                Professional services
-252     SEMC01              Physicians' services
+252     SEMC01              Physicians services
 253     SEMC02              Dental services
 254     SEMC03              Eyeglasses and eye care
 255     SEMC04              Services by other medical professionals
@@ -541,11 +541,11 @@ participant sports fees
 394     SS68023             Tax return preparation and other accounting fees
 395     SSEA011             College textbooks
 396     SSFV031A            Food at elementary and secondary schools
-397     SSGE013             Infants' equipment
-398     SSHJ031             Infants' furniture
+397     SSGE013             Infants equipment
+398     SSHJ031             Infants furniture
 ---------------------------------------------------------
 PLEASE CHOOSE THE CODE OF THE ITEMS IN THE LIST ABOVE
-Example: SSHJ031 (for Infants' furniture)
+Example: SSHJ031 (for Infants furniture)
 ---------------------------------------------------------
 Please input code: AA0
 Please input initial year (Example: 2000): 2000
