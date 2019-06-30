@@ -13,10 +13,6 @@ import pandas as pd
 
 # FOR CHARTS
 import matplotlib.pyplot as plt
-import numpy as np
-import sys
-
-import itertools
 
 ## Loading the data into the environment
 
@@ -114,7 +110,12 @@ dates = (init_date, end_date)
 
 ## Transform series (original, mom or yoy)
 
-transf_list = ["original", "Original", "ORIGINAL", "mom", "MoM", "MOM", "yoy", "YoY", "YOY"]
+list_mom = ["mom", "MoM", "MOM"]
+list_yoy = ["yoy", "YoY", "YOY"]
+list_df = ["original", "Original", "ORIGINAL"]
+transf_list = list_mom + list_yoy + list_df
+
+
 input_transf = input("Please input transformation (Original, MoM, YoY): ")
 if input_transf not in transf_list:
     print("-------------------------------------")
@@ -185,13 +186,17 @@ ax.set_ylabel(y_label)
 
 # Choosing the correct series
 
-df.plot(title=name_series, ax=ax)
-
-plt.show()
-
-
-
-
+if input_transf in list_df:
+    df.plot(title=name_series, ax=ax)
+    plt.show()
+else:
+    if input_transf in list_mom:
+        monthly_return.plot(title=name_series, ax=ax)
+        plt.axhline(y=0.0, color='black', linestyle='-')
+        plt.show()
+    else:
+        yearly_return.plot(title=name_series, ax=ax)
+        plt.axhline(y=0.0, color='black', linestyle='-')
+        plt.show()
 
 exit()
-
