@@ -27,8 +27,13 @@ However, the access to data is limited and the amount of downloads is restricted
 
 After filling your "Organization name" and "E-mail address", you will receive the API by e-mail from labstat@bls.gov. - see an example below. 
 
-Save the API in a .env file as "BLS_API_KEY="ADD API KEY HERE"
+Save the API in a .env file as:
 
+```sh
+
+BLS_API_KEY="ADD API KEY HERE"
+
+```
 
 ```sh
 labstat@bls.gov
