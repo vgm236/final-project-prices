@@ -12,15 +12,7 @@
 >   + [Accessing the Public Data API with Python](https://www.bls.gov/developers/api_python.htm)
 >   + [BLS Public Data API Signatures]([/exercises/groceries/README.md](https://www.bls.gov/developers/api_signature_v2.htm#all))
 >   + [BLS Frequently Asked Questions (FAQs)](https://www.bls.gov/developers/api_FAQs.htm#signatures3)
-> >   + [BLS Series ID Formats](https://www.bls.gov/help/hlpforma.htm#CU)
-
-Iteratively develop a Python application which satisfies the store owner's objectives, as described in more detail by the "Basic Requirements" below.
-
-Before attempting to implement the basic requirements, take some time to configure your project repository according to the "Setup" instructions below. After doing so, you'll have a remote repo on GitHub.com and a local copy on your computer within which to develop.
-
-When developing, as you reach key milestones, use the command-line or GitHub Desktop software to intermittently "commit", or save new versions of, your code. And remember to push / sync / upload your work back up to your remote project repository on GitHub.com at least once before you're done.
-
-If you are able to implement the basic requirements with relative ease, or if you are interested in a challenge, consider addressing one or more of the "Further Exploration Challenges". Otherwise, if you need help breaking the problem up into more manageable pieces, consult the "Guided Checkpoints". And if you would like a narrated walkthrough, consult the "Guided Screencast".
+>   + [BLS Series ID Formats](https://www.bls.gov/help/hlpforma.htm#CU)
 
 ### Repo Setup
 
@@ -29,28 +21,28 @@ If you are able to implement the basic requirements with relative ease, or if yo
 Create and activate a new Anaconda virtual environment:
 
 ```sh
-conda create -n shopping-env python=3.7 # (first time only)
-conda activate shopping-env
+conda create -n prices-env python=3.7 # (first time only)
+conda activate prices-env
 ```
 
-From within the virtual environment, install the `pytest` package:
+Make sure you have installed all packages:
 
 ```sh
-# NOTE: we won't need pytest until/unless addressing the optional "Automated Testing" challenge,
-# so you can feel free to skip this now and return later...
 
-pip install pytest
+pip install requests
+pip install dotenv
+pip install pandas
+pip install matplotlib
+
 ```
 
-From within the virtual environment, demonstrate your ability to run the Python script from the command-line:
+From within the virtual environment, run the Python script from the command-line:
 
 ```sh
-python shopping_cart.py
+python inflation_new.py
 ```
 
-If you see the provided "products" data structure, you're ready to move on to project development. This would be a great time to make any desired modifications to your project's "README.md" file (like adding instructions for how to setup and run the app like you've just done), and then make your first commit, with a message like "Setup the repo".
-
-## Data Setup
+## API Setup
 
 The provided code includes a variable called `products` which facilitates management of the products inventory from within the application's source code.
 
