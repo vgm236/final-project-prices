@@ -36,12 +36,6 @@ pip install matplotlib
 
 ```
 
-From within the virtual environment, run the Python script from the command-line:
-
-```sh
-python inflation_new.py
-```
-
 ## API Setup
 
 The provided code includes a variable called `products` which facilitates management of the products inventory from within the application's source code.
@@ -50,7 +44,15 @@ If you'd like to manage the products inventory via a CSV file instead, download 
 
 If you'd like to manage the products inventory via Google Sheet document instead, reference this provided [products sheet](https://docs.google.com/spreadsheets/d/1ItN7Cc2Yn4K90cMIsxi2P045Gzw0y2JHB_EkV4mXXpI/edit?usp=sharing). And you can later try to reference that data instead of the provided `products` variable. See the "Integrating with a Google Sheets Datastore" challenge for more info.
 
-### Example Output
+## Run the program
+
+From within the virtual environment, run the Python script from the command-line:
+
+```sh
+python inflation_new.py
+```
+
+## Example Output
 
 ``` sh
         Code                Name
