@@ -11,9 +11,9 @@
 
 Using an API Key (discussed below), the program will access a list of Consumer Price Index (CPI henceforth) data, which is released by the Bureau of Labor Statistics (BLS henceforth). The list of names of items and its codes will be displayed in your screen.
 
-After that, the user will be require to type the code of the price he wants to download and visualize. Also, the user will be asked the initial and end year of the sample. Then, it will be required to input how the user wants to visualize the data: the original level of prices, the month-on-month or the year-on-year change. A chart will appears according to the instructions the user provided.
+After that, the user will be require to type the code of the price he wants to download and visualize. Also, the user will be asked the initial and end year of the sample. Then, it will be required to input how the user wants to visualize the data: the original level of prices, the month-on-month or the year-on-year change. A chart will appear, following the instructions the user provided.
 
-Finally, the information downloaded will be saved in a .xlsx format the data in a "Data" folder.
+Finally, the information downloaded will be saved in a .xlsx format file in the "Data" folder.
 
 ## API Setup
 
@@ -32,7 +32,7 @@ Save the API in a .env file as "BLS_API_KEY="ADD API KEY HERE"
 
 ```sh
 labstat@bls.gov
-Fri, Jun 28, 4:04 PM (2 days ago)
+Today
 to me
 
 Thank you for registering with the Bureau of Labor Statistics Public Data API. Your API key is: "API KEY WILL BE HERE".
@@ -493,3 +493,5 @@ Please input code: AA0
 Please input initial year (Example: 2000): 2000
 Please input final year (Example: 2019): 2019
 Please input transformation (Original, MoM, YoY): YoY
+
+
