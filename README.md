@@ -6,6 +6,45 @@
   2. Create a tool to facilitate downloading this economic data
   3. Generate and quickly display the data downloaded in different formats (level, monthly changes and yearly changes)
 
+
+## What the program does?
+
+Using an API Key (discussed below), the program will access a list of Consumer Price Index (CPI henceforth) data, which is released by the Bureau of Labor Statistics (BLS henceforth). The list of names of items and its codes will be displayed in your screen.
+
+After that, the user will be require to type the code of the price he wants to download and visualize. Also, the user will be asked the initial and end year of the sample. Then, it will be required to input how the user wants to visualize the data: the original level of prices, the month-on-month or the year-on-year change. A chart will appears according to the instructions the user provided.
+
+Finally, the information downloaded will be saved in a .xlsx format the data in a "Data" folder.
+
+## API Setup
+
+The BLS provides a free, general API Key to users.
+
+However, the access to data is limited and the amount of downloads is restricted. Therefore, it is appropriate to generate an specific API, which can be requested in the link below.
+
+
+>   + [Requesting API from BLS](https://data.bls.gov/registrationEngine/)
+
+
+After filling your "Organization name" and "E-mail address", you will receive the API by e-mail from labstat@bls.gov. - see an example below. 
+
+Save the API in a .env file as "BLS_API_KEY="ADD API KEY HERE"
+
+
+```sh
+labstat@bls.gov
+Fri, Jun 28, 4:04 PM (2 days ago)
+to me
+
+Thank you for registering with the Bureau of Labor Statistics Public Data API. Your API key is: "API KEY WILL BE HERE".
+
+Please click the link below to validate your key: 
+
+"THERE WILL BE A LINK HERE"
+
+*This is an automated message. Please do not respond to this message.*
+
+```
+
 ## Instructions to run the program
 
 > Useful links:
@@ -13,8 +52,6 @@
 >   + [BLS Public Data API Signatures]([/exercises/groceries/README.md](https://www.bls.gov/developers/api_signature_v2.htm#all))
 >   + [BLS Frequently Asked Questions (FAQs)](https://www.bls.gov/developers/api_FAQs.htm#signatures3)
 >   + [BLS Series ID Formats](https://www.bls.gov/help/hlpforma.htm#CU)
-
-### Repo Setup
 
 ### Environment Setup
 
@@ -35,14 +72,6 @@ pip install pandas
 pip install matplotlib
 
 ```
-
-## API Setup
-
-The provided code includes a variable called `products` which facilitates management of the products inventory from within the application's source code.
-
-If you'd like to manage the products inventory via a CSV file instead, download the provided ["products.csv"](/data/products.csv) file and place it into your project directory in a directory called "data". And you can later try to reference that data instead of the provided `products` variable.
-
-If you'd like to manage the products inventory via Google Sheet document instead, reference this provided [products sheet](https://docs.google.com/spreadsheets/d/1ItN7Cc2Yn4K90cMIsxi2P045Gzw0y2JHB_EkV4mXXpI/edit?usp=sharing). And you can later try to reference that data instead of the provided `products` variable. See the "Integrating with a Google Sheets Datastore" challenge for more info.
 
 ## Run the program
 
@@ -464,9 +493,3 @@ Please input code: AA0
 Please input initial year (Example: 2000): 2000
 Please input final year (Example: 2019): 2019
 Please input transformation (Original, MoM, YoY): YoY
-
-```
-
-
-#################################
-
